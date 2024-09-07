@@ -1,0 +1,16 @@
+[Unit]
+Description=translator_bot service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /root/BotTelegram_openAI/start_script.sh
+ExecStop=/bin/bash /root/BotTelegram_openAI/stop_script.sh
+Restart=always
+RestartSec=5
+TimeoutSec=60
+RuntimeMaxSec=infinity
+PIDFile=/tmp/translator_bot.pid
+
+[Install]
+WantedBy=multi-user.target
